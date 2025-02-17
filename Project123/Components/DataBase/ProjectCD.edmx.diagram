@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="933273ee53cc43549919372d4d7dd5f3" Name="Diagram1">
+        <EntityTypeShape EntityType="ProjectCDModel.Agent" Width="1.5" PointX="8" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.AgentType" Width="1.5" PointX="5.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.Application" Width="1.5" PointX="13" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.ApplicationStatus" Width="1.5" PointX="10.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.Employee" Width="1.5" PointX="10.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.EmployeeCard" Width="1.5" PointX="13" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.EmployeeMovement" Width="1.5" PointX="15.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.Material" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.MaterialStockHistory" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.MaterialType" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.Point" Width="1.5" PointX="10.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.Priority" Width="1.5" PointX="8" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.PriorityHistory" Width="1.5" PointX="10.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.Product" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.Production" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.ProductionMaterial" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.ProductList" Width="1.5" PointX="15.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.ProductPriceHistory" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.ProductType" Width="1.5" PointX="1.5" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.SalesHistory" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.Suppliers" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.Unit" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectCDModel.Workshop" Width="1.5" PointX="0.75" PointY="18.25" IsExpanded="true" />
+        <AssociationConnector Association="ProjectCDModel.FK_Agent_AgentType" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_Point_Agent" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_PriorityHistory_Agent" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_Application_ApplicationStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_ProductList_Application" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_EmployeeCard_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_EmployeeMovement_EmployeeCard" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_Material_MaterialType" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_Material_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_Material_Unit" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_MaterialStockHistory_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_ProductionMaterial_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_PriorityHistory_Priority" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_Product_ProductType" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_Production_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_ProductList_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_ProductPriceHistory_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_Production_Workshop" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectCDModel.FK_ProductionMaterial_Production" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

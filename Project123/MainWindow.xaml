@@ -1,0 +1,35 @@
+﻿<Window x:Class="Project123.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project123"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="1600"
+        Icon="/Components/Images/Лопушок.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Background="#008F8C">
+            <Image Margin="10" Source="/Components/Images/Лопушок.png" />
+            <TextBlock VerticalAlignment="Center" Foreground="White" FontSize="48">Лопушок</TextBlock>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Margin="10" Name="ProductsBtn" FontSize="48"><Hyperlink Click="ProductsBtn_Click" Foreground="#D8FFDB" TextDecorations="None">Продукты</Hyperlink></TextBlock>
+            </StackPanel>
+            </StackPanel>
+        <ScrollViewer Grid.Row="1">
+            <StackPanel>
+                <StackPanel Height="250">
+                    
+                </StackPanel>
+                <TabControl MaxHeight="800" MinHeight="550" Name="MainTB" Grid.Row="1">
+                    <TabItem FontSize="24" Header="Главная">
+                        
+                    </TabItem>
+                </TabControl>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
