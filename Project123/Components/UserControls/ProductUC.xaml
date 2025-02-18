@@ -6,14 +6,22 @@
              xmlns:local="clr-namespace:Project123.Components.UserControls"
              mc:Ignorable="d" 
               >
-    <Grid Margin="10" Height="400" Width="250" Background="#FFEEEEEE">
-            <Image Width="200" Height="200" VerticalAlignment="Top" Margin="0 50 0 0" Source="/Components/Images/4154393.png"/>
-        <Grid Height="150" VerticalAlignment="Bottom" Margin="10 0 10 10">
+    <Grid Margin="10" Height="200" Width="400" Background="#FFEEEEEE">
+            <Image Width="200" Height="200" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="10 0 0 0" Source="/Components/Images/4154393.png"/>
+        <Grid Height="150" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10 0 10 10">
             <TextBlock VerticalAlignment="Top"    Text="{Binding Name}"        FontSize="24"></TextBlock>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock VerticalAlignment="Center" Text="{Binding Article}"     FontSize="20"></TextBlock>
-                <TextBlock VerticalAlignment="Center" Margin="40 0 10 0" Text="{Binding Price}"     FontSize="20"></TextBlock>
-                <TextBlock VerticalAlignment="Center" FontSize="20">Рублей</TextBlock>
+            <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0 0 10 0" FontSize="20">Артикул</TextBlock>
+                    <TextBlock  Text="{Binding Article}" FontSize="20">121233123</TextBlock>
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0 0 10 0" FontSize="20">Стоимость</TextBlock>
+                    <TextBlock VerticalAlignment="Center"  Text="{Binding Price}"     FontSize="20">123123</TextBlock>
+                <TextBlock VerticalAlignment="Center" Margin="10 0 0 0" FontSize="20">Рублей</TextBlock>
+                </StackPanel>
 
             </StackPanel>
             <TextBlock VerticalAlignment="Bottom" Text="{Binding Description}" TextWrapping="NoWrap"  FontSize="16"  ></TextBlock>
