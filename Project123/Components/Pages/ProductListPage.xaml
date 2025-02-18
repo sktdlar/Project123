@@ -14,9 +14,22 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <TextBlock FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10">
+        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBlock FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10">
             Товары
-        </TextBlock>
+            </TextBlock>
+            <TextBlock VerticalAlignment="Center" FontSize="20" Margin="40 0 0 0">Поиск</TextBlock>
+            <TextBox TextChanged="SearchTb_TextChanged" VerticalAlignment="Center" Name="SearchTb" Margin="10" Width="200"></TextBox>
+            <TextBlock VerticalAlignment="Center" FontSize="20" Margin="40 0 0 0">Фильтр</TextBlock>
+            <ComboBox Margin="10" Width="200" VerticalContentAlignment="Center" Name="Filter" SelectionChanged="Filter_SelectionChanged" VerticalAlignment="Center">
+                <ComboBoxItem>Все типы</ComboBoxItem>
+                <ComboBoxItem>Один слой</ComboBoxItem>
+                <ComboBoxItem>Два слоя</ComboBoxItem>
+                <ComboBoxItem>Три слоя</ComboBoxItem>
+                <ComboBoxItem>Супер мягкая</ComboBoxItem>
+                <ComboBoxItem>Детская</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
         <StackPanel Grid.Row="1">
             <WrapPanel HorizontalAlignment="Center" Name="ProductsWP">
                 

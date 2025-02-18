@@ -27,20 +27,55 @@ namespace Project123.Components.Pages
         public ProductListPage()
         {
             InitializeComponent();
+            Filter.SelectedIndex = 0;
             int pageNumber = 0;
             Refresh();
-
         }
+
+        int GetType()
+        {
+            if (Filter.SelectedIndex == 1)
+            {
+                return 3;
+            }
+            if (Filter.SelectedIndex == 2)
+            {
+                return 1;
+            }
+            if (Filter.SelectedIndex == 3)
+            {
+                return 5;
+            }
+            if (Filter.SelectedIndex == 4)
+            {
+                return 4;
+            }
+            if (Filter.SelectedIndex == 5)
+            {
+                return 5;
+            }
+            return 0;
+        }
+        List<Products> listik;
         void Refresh()
         {
             ProductsWP.Children.Clear();
             int pagePosition = 20 * pageNumber;
             visibleList.Clear();
+            listik = App.db.Products.ToList();
+            if (GetType() != 0)
+            {
+                listik = listik.Where(x => x.ProductTypeId == GetType()).ToList();
+            }
+            if(SearchTb.Text.Length >= 1)
+            {
+                listik = listik.Where(x => x.Name.ToLower().Contains(SearchTb.Text.ToLower())).ToList();
+            }
             for (int i = (pagePosition); i < pagePosition + 20; i++)
             {
                 try
                 {
-                    visibleList.Add(App.db.Products.ToList()[i]);
+                    visibleList.Add(listik[i]);
                 }
                 catch { }
             } 
@@ -48,8 +83,8 @@ namespace Project123.Components.Pages
             {
                 ProductsWP.Children.Add(new ProductUC(i));
             }
-            PageNumber.Text = pageNumber.ToString();
-            CountVisible.Text = $"{pagePosition} из {pagePosition + 20}";
+            PageNumber.Text = (pageNumber + 1).ToString();
+            CountVisible.Text = $"{visibleList.Count} из {listik.Count}";
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -74,7 +109,7 @@ namespace Project123.Components.Pages
             {
                 try
                 {
-                    visibleList1.Add(App.db.Products.ToList()[i]);
+                    visibleList1.Add(listik[i]);
                 }
                 catch { }
             }
@@ -87,6 +122,16 @@ namespace Project123.Components.Pages
                 pageNumber++;
                 Refresh();
             }
+        }
+
+        private void Filter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Refresh();
         }
     }
 }
