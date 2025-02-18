@@ -14,11 +14,12 @@ namespace Project123.Components.DataBase
     
     public partial class ProductPriceHistory
     {
-        public int id { get; set; }
-        public Nullable<int> idProduct { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<decimal> NewPrice { get; set; }
+        public int HistoryID { get; set; }
+        public int ProductID { get; set; }
+        public decimal OldPrice { get; set; }
+        public decimal NewPrice { get; set; }
+        public System.DateTime ChangeDate { get; set; }
     
-        public virtual Product Product { get; set; }
+        public virtual Products Products { get; set; }
     }
 }

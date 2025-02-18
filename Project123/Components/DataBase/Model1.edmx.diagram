@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8031c1eb0748414880afffcd2a4b7ed0" Name="Diagram1">
+        <EntityTypeShape EntityType="ProductManagementModel.AgentPriorityHistory" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.AgentRequests" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.AgentRequestStatus" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.Agents" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.AgentType" Width="1.5" PointX="1.5" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.Materials" Width="1.5" PointX="3" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.MaterialStockHistory" Width="1.5" PointX="5.25" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.MaterialType" Width="1.5" PointX="0.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.ProductionMaterials" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.ProductPriceHistory" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.Products" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.ProductType" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.RequestDetails" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.SalesPoints" Width="1.5" PointX="3" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.Suppliers" Width="1.5" PointX="0.75" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.Unit" Width="1.5" PointX="0.75" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductManagementModel.Workshop" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="ProductManagementModel.FK__AgentPrio__Agent__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductManagementModel.FK__AgentRequ__Agent__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductManagementModel.FK__RequestDe__Reque__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductManagementModel.FK_AgentRequests_AgentRequestStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductManagementModel.FK__SalesPoin__Agent__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductManagementModel.FK_Agents_AgentType" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductManagementModel.FK__MaterialS__Mater__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductManagementModel.FK__Materials__Suppl__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductManagementModel.FK__Productio__Mater__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductManagementModel.FK_Materials_MaterialType" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductManagementModel.FK_Materials_Unit" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductManagementModel.FK__Productio__Produ__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductManagementModel.FK__ProductPr__Produ__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductManagementModel.FK__RequestDe__Produ__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductManagementModel.FK_Products_ProductType" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductManagementModel.FK_Products_Workshop" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

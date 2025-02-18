@@ -12,14 +12,15 @@ namespace Project123.Components.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductList
+    public partial class RequestDetails
     {
-        public int id { get; set; }
-        public Nullable<int> idApplication { get; set; }
-        public Nullable<int> idProduct { get; set; }
-        public Nullable<int> Count { get; set; }
+        public int DetailID { get; set; }
+        public int RequestID { get; set; }
+        public int ProductID { get; set; }
+        public int Quantity { get; set; }
+        public decimal AgreedPrice { get; set; }
     
-        public virtual Application Application { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual AgentRequests AgentRequests { get; set; }
+        public virtual Products Products { get; set; }
     }
 }

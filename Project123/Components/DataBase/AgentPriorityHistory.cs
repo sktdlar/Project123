@@ -12,12 +12,14 @@ namespace Project123.Components.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Point
+    public partial class AgentPriorityHistory
     {
-        public int id { get; set; }
-        public Nullable<int> idAgent { get; set; }
-        public string Address { get; set; }
+        public int ChangeID { get; set; }
+        public int AgentID { get; set; }
+        public int OldPriorityLevel { get; set; }
+        public int NewPriorityLevel { get; set; }
+        public System.DateTime ChangeDate { get; set; }
     
-        public virtual Agent Agent { get; set; }
+        public virtual Agents Agents { get; set; }
     }
 }

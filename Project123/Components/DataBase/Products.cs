@@ -12,33 +12,35 @@ namespace Project123.Components.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Material
+    public partial class Products
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Material()
+        public Products()
         {
-            this.MaterialStockHistory = new HashSet<MaterialStockHistory>();
-            this.ProductionMaterial = new HashSet<ProductionMaterial>();
+            this.ProductionMaterials = new HashSet<ProductionMaterials>();
+            this.ProductPriceHistory = new HashSet<ProductPriceHistory>();
+            this.RequestDetails = new HashSet<RequestDetails>();
         }
     
-        public int id { get; set; }
+        public int Article { get; set; }
         public string Name { get; set; }
-        public int idMaterialType { get; set; }
-        public Nullable<int> idSupplier { get; set; }
-        public decimal QuantityPerPackage { get; set; }
-        public int Unit { get; set; }
-        public decimal StockQuantity { get; set; }
-        public Nullable<decimal> MinStockLevel { get; set; }
+        public int ProductTypeId { get; set; }
         public string Description { get; set; }
         public byte[] Image { get; set; }
-        public decimal Cost { get; set; }
+        public decimal MinAgentPrice { get; set; }
+        public Nullable<int> RequiredEmployees { get; set; }
+        public Nullable<int> WorkshopNumber { get; set; }
+        public Nullable<System.TimeSpan> ProductionTime { get; set; }
+        public Nullable<int> Width { get; set; }
+        public Nullable<int> Heigth { get; set; }
     
-        public virtual MaterialType MaterialType { get; set; }
-        public virtual Suppliers Suppliers { get; set; }
-        public virtual Unit Unit1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MaterialStockHistory> MaterialStockHistory { get; set; }
+        public virtual ICollection<ProductionMaterials> ProductionMaterials { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductionMaterial> ProductionMaterial { get; set; }
+        public virtual ICollection<ProductPriceHistory> ProductPriceHistory { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RequestDetails> RequestDetails { get; set; }
+        public virtual ProductType ProductType { get; set; }
+        public virtual Workshop Workshop { get; set; }
     }
 }

@@ -17,13 +17,13 @@ namespace Project123.Components.DataBase
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ProductType()
         {
-            this.Product = new HashSet<Product>();
+            this.Products = new HashSet<Products>();
         }
     
-        public int id { get; set; }
-        public string Name { get; set; }
+        public int ProductTypeId { get; set; }
+        public string TypeName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Product { get; set; }
+        public virtual ICollection<Products> Products { get; set; }
     }
 }

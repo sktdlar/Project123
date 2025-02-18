@@ -14,7 +14,7 @@ namespace Project123
     /// </summary>
     public partial class App : System.Windows.Application
     {
-        public static ProjectCDEntities db = new ProjectCDEntities();
+        public static ProductManagementEntities db = new ProductManagementEntities();
         public static MainWindow mainWindow;
 
     }

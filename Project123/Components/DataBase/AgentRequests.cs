@@ -12,23 +12,23 @@ namespace Project123.Components.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Employee
+    public partial class AgentRequests
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Employee()
+        public AgentRequests()
         {
-            this.EmployeeCard = new HashSet<EmployeeCard>();
+            this.RequestDetails = new HashSet<RequestDetails>();
         }
     
-        public int id { get; set; }
-        public string FullName { get; set; }
-        public System.DateTime BirthDate { get; set; }
-        public string PassportData { get; set; }
-        public string BankDetails { get; set; }
-        public string FamilyStatus { get; set; }
-        public string HealthIssues { get; set; }
+        public int RequestID { get; set; }
+        public int AgentID { get; set; }
+        public System.DateTime RequestDate { get; set; }
+        public int Status_Id { get; set; }
+        public Nullable<decimal> TotalAmount { get; set; }
     
+        public virtual Agents Agents { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EmployeeCard> EmployeeCard { get; set; }
+        public virtual ICollection<RequestDetails> RequestDetails { get; set; }
+        public virtual AgentRequestStatus AgentRequestStatus { get; set; }
     }
 }

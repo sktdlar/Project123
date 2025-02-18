@@ -85,92 +85,71 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Components\Controls\TabControlMechanism.cs" />
-    <Compile Include="Components\DataBase\Agent.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
+    <Compile Include="Components\DataBase\AgentPriorityHistory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Components\DataBase\AgentRequests.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Components\DataBase\AgentRequestStatus.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Components\DataBase\Agents.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Components\DataBase\AgentType.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Components\DataBase\Application.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Components\DataBase\ApplicationStatus.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Components\DataBase\Employee.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Components\DataBase\EmployeeCard.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Components\DataBase\EmployeeMovement.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Components\DataBase\Material.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
+    <Compile Include="Components\DataBase\Materials.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Components\DataBase\MaterialStockHistory.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Components\DataBase\MaterialType.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Components\DataBase\Point.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
+    <Compile Include="Components\DataBase\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Components\DataBase\Priority.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
+    <Compile Include="Components\DataBase\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Components\DataBase\PriorityHistory.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
+    <Compile Include="Components\DataBase\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Components\DataBase\Product.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Components\DataBase\Production.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Components\DataBase\ProductionMaterial.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Components\DataBase\ProductList.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
+    <Compile Include="Components\DataBase\ProductionMaterials.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Components\DataBase\ProductPriceHistory.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Components\DataBase\Products.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Components\DataBase\ProductType.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Components\DataBase\ProjectCD.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectCD.Context.tt</DependentUpon>
+    <Compile Include="Components\DataBase\RequestDetails.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Components\DataBase\ProjectCD.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectCD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Components\DataBase\ProjectCD.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectCD.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Components\DataBase\SalesHistory.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
+    <Compile Include="Components\DataBase\SalesPoints.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Components\DataBase\Suppliers.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Components\DataBase\sysdiagrams.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Components\DataBase\Unit.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Components\DataBase\Workshop.cs">
-      <DependentUpon>ProjectCD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Components\Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
@@ -178,6 +157,7 @@
     <Compile Include="Components\Pages\ProductListPage.xaml.cs">
       <DependentUpon>ProductListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\PartialClass\Products.cs" />
     <Compile Include="Components\UserControls\ProductUC.xaml.cs">
       <DependentUpon>ProductUC.xaml</DependentUpon>
     </Compile>
@@ -204,12 +184,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Components\DataBase\ProjectCD.edmx">
+    <EntityDeploy Include="Components\DataBase\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProjectCD.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Components\DataBase\ProjectCD.edmx.diagram">
-      <DependentUpon>ProjectCD.edmx</DependentUpon>
+    <None Include="Components\DataBase\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -220,26 +200,26 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Components\PartialClass\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Components\DataBase\ProjectCD.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ProjectCD.Context.cs</LastGenOutput>
-      <DependentUpon>ProjectCD.edmx</DependentUpon>
-    </Content>
-    <Content Include="Components\DataBase\ProjectCD.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProjectCD.edmx</DependentUpon>
-      <LastGenOutput>ProjectCD.cs</LastGenOutput>
-    </Content>
     <Resource Include="Components\Images\4154393.png" />
     <Resource Include="Components\Images\Лопушок.ico" />
     <Resource Include="Components\Images\Лопушок.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Components\DataBase\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Components\DataBase\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

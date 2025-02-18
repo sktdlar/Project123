@@ -17,15 +17,15 @@ namespace Project123.Components.DataBase
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Suppliers()
         {
-            this.Material = new HashSet<Material>();
+            this.Materials = new HashSet<Materials>();
         }
     
-        public int id { get; set; }
+        public int SupplierID { get; set; }
         public string Name { get; set; }
         public string INN { get; set; }
         public string SupplierType { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Material> Material { get; set; }
+        public virtual ICollection<Materials> Materials { get; set; }
     }
 }

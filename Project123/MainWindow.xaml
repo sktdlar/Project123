@@ -24,9 +24,13 @@
                 <StackPanel Height="250">
                     
                 </StackPanel>
-                <TabControl MaxHeight="800" MinHeight="550" Name="MainTB" Grid.Row="1">
+                <TabControl MinHeight="550" Name="MainTB" Grid.Row="1">
                     <TabItem FontSize="24" Header="Главная">
-                        
+                        <TabItem.Content>
+                            <Frame Name="MainFrame">
+                                
+                            </Frame>
+                        </TabItem.Content>
                     </TabItem>
                 </TabControl>
             </StackPanel>

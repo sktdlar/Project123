@@ -14,12 +14,12 @@ namespace Project123.Components.DataBase
     
     public partial class MaterialStockHistory
     {
-        public int id { get; set; }
-        public int idMaterial { get; set; }
+        public int HistoryID { get; set; }
+        public int MaterialID { get; set; }
         public System.DateTime ChangeDate { get; set; }
         public string ChangeType { get; set; }
         public decimal QuantityChange { get; set; }
     
-        public virtual Material Material { get; set; }
+        public virtual Materials Materials { get; set; }
     }
 }

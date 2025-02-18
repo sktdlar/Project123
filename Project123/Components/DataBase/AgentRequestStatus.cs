@@ -12,29 +12,18 @@ namespace Project123.Components.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Agent
+    public partial class AgentRequestStatus
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Agent()
+        public AgentRequestStatus()
         {
-            this.Point = new HashSet<Point>();
-            this.PriorityHistory = new HashSet<PriorityHistory>();
+            this.AgentRequests = new HashSet<AgentRequests>();
         }
     
-        public int id { get; set; }
-        public string Name { get; set; }
-        public Nullable<int> idType { get; set; }
-        public string INN { get; set; }
-        public string KPP { get; set; }
-        public string DirectorFIO { get; set; }
-        public string Phote { get; set; }
-        public string Email { get; set; }
-        public byte[] Logo { get; set; }
+        public int StatusId { get; set; }
+        public string StatusName { get; set; }
     
-        public virtual AgentType AgentType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Point> Point { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PriorityHistory> PriorityHistory { get; set; }
+        public virtual ICollection<AgentRequests> AgentRequests { get; set; }
     }
 }

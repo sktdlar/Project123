@@ -12,18 +12,14 @@ namespace Project123.Components.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Priority
+    public partial class ProductionMaterials
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Priority()
-        {
-            this.PriorityHistory = new HashSet<PriorityHistory>();
-        }
+        public int ID { get; set; }
+        public int ProductArticle { get; set; }
+        public int MaterialID { get; set; }
+        public decimal Quantity { get; set; }
     
-        public int id { get; set; }
-        public string Name { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PriorityHistory> PriorityHistory { get; set; }
+        public virtual Materials Materials { get; set; }
+        public virtual Products Products { get; set; }
     }
 }

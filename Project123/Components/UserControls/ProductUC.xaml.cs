@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project123.Components.DataBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,11 @@ namespace Project123.Components.UserControls
     /// </summary>
     public partial class ProductUC : UserControl
     {
-        public ProductUC()
+        public ProductUC(Products products)
         {
             InitializeComponent();
+            DataContext = products;
+
         }
     }
 }

@@ -27,8 +27,7 @@ namespace Project123
         {
             InitializeComponent();
             tabControl = MainTB;
-            App.mainWindow = this;
-//            MainFrame.Navigate(new ProductListPage());
+            App.mainWindow = this;  
         }
 
 

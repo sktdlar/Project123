@@ -13,10 +13,10 @@ namespace Project123.Components.DataBase
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ProjectCDEntities : DbContext
+    public partial class ProductManagementEntities : DbContext
     {
-        public ProjectCDEntities()
-            : base("name=ProjectCDEntities")
+        public ProductManagementEntities()
+            : base("name=ProductManagementEntities")
         {
         }
     
@@ -25,28 +25,21 @@ namespace Project123.Components.DataBase
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Agent> Agent { get; set; }
+        public virtual DbSet<AgentPriorityHistory> AgentPriorityHistory { get; set; }
+        public virtual DbSet<AgentRequests> AgentRequests { get; set; }
+        public virtual DbSet<AgentRequestStatus> AgentRequestStatus { get; set; }
+        public virtual DbSet<Agents> Agents { get; set; }
         public virtual DbSet<AgentType> AgentType { get; set; }
-        public virtual DbSet<Application> Application { get; set; }
-        public virtual DbSet<ApplicationStatus> ApplicationStatus { get; set; }
-        public virtual DbSet<Employee> Employee { get; set; }
-        public virtual DbSet<EmployeeCard> EmployeeCard { get; set; }
-        public virtual DbSet<EmployeeMovement> EmployeeMovement { get; set; }
-        public virtual DbSet<Material> Material { get; set; }
+        public virtual DbSet<Materials> Materials { get; set; }
         public virtual DbSet<MaterialStockHistory> MaterialStockHistory { get; set; }
         public virtual DbSet<MaterialType> MaterialType { get; set; }
-        public virtual DbSet<Point> Point { get; set; }
-        public virtual DbSet<Priority> Priority { get; set; }
-        public virtual DbSet<PriorityHistory> PriorityHistory { get; set; }
-        public virtual DbSet<Product> Product { get; set; }
-        public virtual DbSet<Production> Production { get; set; }
-        public virtual DbSet<ProductionMaterial> ProductionMaterial { get; set; }
-        public virtual DbSet<ProductList> ProductList { get; set; }
+        public virtual DbSet<ProductionMaterials> ProductionMaterials { get; set; }
         public virtual DbSet<ProductPriceHistory> ProductPriceHistory { get; set; }
+        public virtual DbSet<Products> Products { get; set; }
         public virtual DbSet<ProductType> ProductType { get; set; }
-        public virtual DbSet<SalesHistory> SalesHistory { get; set; }
+        public virtual DbSet<RequestDetails> RequestDetails { get; set; }
+        public virtual DbSet<SalesPoints> SalesPoints { get; set; }
         public virtual DbSet<Suppliers> Suppliers { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Unit> Unit { get; set; }
         public virtual DbSet<Workshop> Workshop { get; set; }
     }

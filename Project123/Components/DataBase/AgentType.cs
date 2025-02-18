@@ -17,13 +17,13 @@ namespace Project123.Components.DataBase
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public AgentType()
         {
-            this.Agent = new HashSet<Agent>();
+            this.Agents = new HashSet<Agents>();
         }
     
-        public int id { get; set; }
-        public string Name { get; set; }
+        public int AgenttypeId { get; set; }
+        public string TypeName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Agent> Agent { get; set; }
+        public virtual ICollection<Agents> Agents { get; set; }
     }
 }

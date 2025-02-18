@@ -12,35 +12,34 @@ namespace Project123.Components.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class Agents
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public Agents()
         {
-            this.Production = new HashSet<Production>();
-            this.ProductList = new HashSet<ProductList>();
-            this.ProductPriceHistory = new HashSet<ProductPriceHistory>();
+            this.AgentPriorityHistory = new HashSet<AgentPriorityHistory>();
+            this.AgentRequests = new HashSet<AgentRequests>();
+            this.SalesPoints = new HashSet<SalesPoints>();
         }
     
-        public int id { get; set; }
-        public string Article { get; set; }
+        public int AgentID { get; set; }
         public string Name { get; set; }
-        public Nullable<int> idProductType { get; set; }
-        public string Description { get; set; }
-        public byte[] Image { get; set; }
-        public Nullable<int> WeightWithPackage { get; set; }
-        public string WeightWithoutPackage { get; set; }
-        public byte[] QualityCertificate { get; set; }
-        public string Standart { get; set; }
-        public string Size { get; set; }
-        public Nullable<decimal> MinAgentPrice { get; set; }
+        public int AgentType_id { get; set; }
+        public string LegalAddress { get; set; }
+        public string INN { get; set; }
+        public string KPP { get; set; }
+        public string DirectorName { get; set; }
+        public string ContactPhone { get; set; }
+        public string ContactEmail { get; set; }
+        public byte[] Logo { get; set; }
+        public int PriorityLevel { get; set; }
     
-        public virtual ProductType ProductType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Production> Production { get; set; }
+        public virtual ICollection<AgentPriorityHistory> AgentPriorityHistory { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductList> ProductList { get; set; }
+        public virtual ICollection<AgentRequests> AgentRequests { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductPriceHistory> ProductPriceHistory { get; set; }
+        public virtual ICollection<SalesPoints> SalesPoints { get; set; }
+        public virtual AgentType AgentType { get; set; }
     }
 }

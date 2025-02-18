@@ -18,10 +18,17 @@
             Товары
         </TextBlock>
         <StackPanel Grid.Row="1">
-
+            <WrapPanel HorizontalAlignment="Center" Name="ProductsWP">
+                
+            </WrapPanel>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center">
-            
+            <Button Name="BackBtn" Background="#D8FFDB" VerticalContentAlignment="Center" FontSize="16" Height="50" Width="50" Click="BackBtn_Click">←</Button>
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Margin="10 0 10 0" FontSize="24" HorizontalAlignment="Center" Name="PageNumber">12</TextBlock>
+                <TextBlock Margin="10 0 10 0" FontSize="24" HorizontalAlignment="Center" Name="CountVisible">12</TextBlock>
+            </StackPanel>
+            <Button Name="ToBtn" Background="#D8FFDB" VerticalContentAlignment="Center" FontSize="16" Height="50" Width="50" Click="ToBtn_Click">→</Button>
         </StackPanel>
     </Grid>
 </Page>

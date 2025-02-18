@@ -12,10 +12,12 @@ namespace Project123.Components.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class SalesHistory
+    public partial class SalesPoints
     {
-        public int id { get; set; }
-        public Nullable<int> idApplication { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
+        public int SalesPointID { get; set; }
+        public int AgentID { get; set; }
+        public string Address { get; set; }
+    
+        public virtual Agents Agents { get; set; }
     }
 }
