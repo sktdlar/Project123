@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Project123.Components.UserControls"
              mc:Ignorable="d" MouseLeftButtonDown="UserControl_MouseLeftButtonDown"
              >
-    <Grid Margin="10" Height="200" Width="400" Name="MainGrid" Background="LightGreen">
+    <Grid Margin="10" Height="200" Width="1400" Name="MainGrid" Background="LightGreen">
         <Image x:Name="ProductImage" Width="200" Height="200" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" />
 
         <Grid Height="150" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10 0 10 10">

@@ -2,18 +2,18 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:local="clr-namespace:Project123.Components.Pages"
-      Title="ProductEditPage" Background="White">
+      Title="ProductEditPage" Background="White" Width="1200">
 
     <Grid>
         <StackPanel>
-            <TextBlock Text="Артикул" Margin="10"/>
-            <TextBox Name="ArticleTextBox" Margin="10"/>
+            <TextBlock FontSize="24" Text="Артикул" Margin="10"/>
+            <TextBox  FontSize="24" Name="ArticleTextBox" Margin="10"/>
 
-            <TextBlock Text="Наименование" Margin="10"/>
-            <TextBox Name="NameTextBox" Margin="10"/>
+            <TextBlock FontSize="24" Text="Наименование" Margin="10"/>
+            <TextBox FontSize="24" Name="NameTextBox" Margin="10"/>
 
-            <TextBlock Text="Тип продукции" Margin="10"/>
-            <ComboBox Name="ProductTypeComboBox" Margin="10">
+            <TextBlock FontSize="24" Text="Тип продукции" Margin="10"/>
+            <ComboBox FontSize="24" Name="ProductTypeComboBox" Margin="10">
                 <ComboBoxItem>Один слой</ComboBoxItem>
                 <ComboBoxItem>Два слоя</ComboBoxItem>
                 <ComboBoxItem>Три слоя</ComboBoxItem>
@@ -21,21 +21,39 @@
                 <ComboBoxItem>Детская</ComboBoxItem>
             </ComboBox>
 
-            <TextBlock Text="Изображение" Margin="10"/>
+            <TextBlock Text="Изображение" FontSize="24" Margin="10"/>
             <Image Name="ProductImage" Width="200" Height="200" Stretch="Uniform" />
-            <Button Content="Выбрать изображение" Click="SelectImageButton_Click" />
+            <Button FontSize="24" Content="Выбрать изображение" Click="SelectImageButton_Click" />
 
-            <TextBlock Text="Описание" Margin="10"/>
-            <TextBox Name="DescriptionTextBox" Margin="10" AcceptsReturn="True"/>
+            <TextBlock Text="Описание" FontSize="24" Margin="10"/>
+            <TextBox FontSize="24" Height="200" TextWrapping="Wrap" Name="DescriptionTextBox" Margin="10" AcceptsReturn="True"/>
 
-            <TextBlock Text="Материалы" Margin="10"/>
-            <DataGrid Name="MaterialsDataGrid" Margin="10" AutoGenerateColumns="True" Height="150"/>
+            <TextBlock Text="Материалы" FontSize="24" Margin="10"/>
+            <DataGrid Name="MaterialsDataGrid" FontSize="24" Margin="10" AutoGenerateColumns="True" Height="150">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Materials.Name}"/>
+                    <DataGridTextColumn Header="Кол-во" Binding="{Binding Materials.Unit}"/>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding Materials.Cost}"/>
 
-            <Button Name="AddMaterialButton" Content="Добавить материал" Margin="10" Click="AddMaterialButton_Click"/>
-            <Button Name="RemoveMaterialButton" Content="Удалить материал" Margin="10" Click="RemoveMaterialButton_Click"/>
 
-            <Button Name="SaveButton" Content="Сохранить" Margin="10" Click="SaveButton_Click"/>
-            <Button Name="DeleteButton" Content="Удалить" Margin="10" Click="DeleteButton_Click"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <ComboBox VerticalContentAlignment="Center" VerticalAlignment="Center" Width="500" FontSize="24" Name="MaterialCb">
+                    
+                </ComboBox>
+                <TextBlock Margin="10" VerticalAlignment="Center" FontSize="24">Количество</TextBlock>
+                <TextBox Width="200" VerticalAlignment="Center" FontSize="24" Name="Count">
+                    
+                </TextBox>
+            </StackPanel>
+
+            <Button Name="AddMaterialButton" FontSize="24" Content="Добавить материал" Margin="10" Click="AddMaterialButton_Click"/>
+            <Button Name="RemoveMaterialButton" FontSize="24" Content="Удалить материал" Margin="10" Click="RemoveMaterialButton_Click"/>
+
+            <Button Name="SaveButton" FontSize="24" Content="Сохранить" Margin="10" Click="SaveButton_Click"/>
+            <Button Name="DeleteButton" FontSize="24" Content="Удалить" Margin="10" Click="DeleteButton_Click"/>
         </StackPanel>
     </Grid>
 </Page>

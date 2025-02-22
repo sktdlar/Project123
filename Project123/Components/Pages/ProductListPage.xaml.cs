@@ -172,9 +172,9 @@ namespace Project123.Components.Pages
             foreach(var i in listy)
             {
                 MessageBox.Show(i.Name);
-                PriceChangeWindow priceChangeWindow = new PriceChangeWindow(listy);
-                priceChangeWindow.Show();
-            }
+            }   
+            PriceChangeWindow priceChangeWindow = new PriceChangeWindow(listy);
+            priceChangeWindow.Show();
         }
     }
 }

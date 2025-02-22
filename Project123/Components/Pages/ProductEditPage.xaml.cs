@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -12,11 +13,22 @@ namespace Project123.Components.Pages
     public partial class ProductEditPage : Page
     {
         private Products currentProduct;
-
-        public ProductEditPage(Products product = null)
+        List<ProductionMaterials> productionMaterials;
+        public ProductEditPage(Products product)
         {
             InitializeComponent();
-
+            productionMaterials = new List<ProductionMaterials>();
+            MaterialCb.ItemsSource = App.db.Materials.ToList();
+            MaterialCb.DisplayMemberPath = "Name";
+            List<ProductionMaterials> listy = new List<ProductionMaterials>();
+            foreach(var item in App.db.ProductionMaterials.ToList())
+            {
+                if(item.Products == product)
+                {
+                    productionMaterials.Add(item);
+                }
+            }
+            MaterialsDataGrid.ItemsSource = listy.ToList();
             if (product != null)
             {
                 currentProduct = product;
@@ -105,6 +117,10 @@ namespace Project123.Components.Pages
                 existingProduct.ProductTypeId = currentProduct.ProductTypeId;
                 existingProduct.Description = currentProduct.Description;
                 existingProduct.Image = currentProduct.Image;
+                foreach(var i in productionMaterials)
+                {
+                    App.db.ProductionMaterials.Add(i);
+                }
             }
             else
             {
@@ -146,7 +162,14 @@ namespace Project123.Components.Pages
 
         private void AddMaterialButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("");
+                productionMaterials.Add(new ProductionMaterials()
+                {
+                    MaterialID = (MaterialCb.SelectedItem as Materials).MaterialID,
+                    ProductArticle = currentProduct.Article,
+                    Quantity = int.Parse(Count.Text)
+                });
+                MaterialsDataGrid.ItemsSource = productionMaterials;
+            
 
         }
 
