@@ -21,8 +21,18 @@
             </StackPanel>
         <ScrollViewer Grid.Row="1">
             <StackPanel>
-                <StackPanel Height="250">
-                    
+                <StackPanel Margin="10 10 0 0" Height="250">
+                    <StackPanel>
+                        <TextBlock FontSize="48">Буртов Данил Евгеньевич</TextBlock>
+                        <TextBlock FontSize="24">Добро пожаловать, Данил Евгеньевич! 🚀 Сегодня отличный день для новых заказов!</TextBlock>
+                        <TextBlock FontSize="24">"Сегодня вы создали [X] заказов. Продолжайте в том же духе!"</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Background="#D8FFDB" Padding="10 0 10 0" FontSize="24">Новая заявка</Button>
+                        <Button Background="#D8FFDB"  Padding="10 0 10 0"  FontSize="24">Все заявки</Button>
+                        <Button Background="#D8FFDB"  Padding="10 0 10 0"  FontSize="24">История заявок</Button>
+
+                    </StackPanel>
                 </StackPanel>
                 <TabControl MinHeight="550" Name="MainTB" Grid.Row="1">
                     <TabItem FontSize="24" Header="Главная">

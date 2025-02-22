@@ -10,17 +10,22 @@
             <Image Width="200" Height="200" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="10 0 0 0" Source="/Components/Images/4154393.png"/>
         <Grid Height="150" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10 0 10 10">
             <TextBlock VerticalAlignment="Top"    Text="{Binding Name}"        FontSize="24"></TextBlock>
-            <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+            <StackPanel VerticalAlignment="Bottom" Orientation="Vertical">
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="0 0 10 0" FontSize="20">Артикул</TextBlock>
-                    <TextBlock  Text="{Binding Article}" FontSize="20">121233123</TextBlock>
+                    <TextBlock Margin="0 0 10 0" FontSize="16">Артикул</TextBlock>
+                    <TextBlock  Text="{Binding Article}" FontSize="16"></TextBlock>
 
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="0 0 10 0" FontSize="20">Стоимость</TextBlock>
-                    <TextBlock VerticalAlignment="Center"  Text="{Binding Price}"     FontSize="20">123123</TextBlock>
-                <TextBlock VerticalAlignment="Center" Margin="10 0 0 0" FontSize="20">Рублей</TextBlock>
+                    <TextBlock Margin="0 0 10 0" FontSize="16">Стоимость</TextBlock>
+                    <TextBlock VerticalAlignment="Center"  Text="{Binding Price}"     FontSize="16"></TextBlock>
+                    <TextBlock VerticalAlignment="Center" Margin="10 0 0 0" FontSize="16">Рублей</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0 0 10 0" FontSize="16">Минимальная<LineBreak/>Стоимость для агента</TextBlock>
+                    <TextBlock VerticalAlignment="Center"  Text="{Binding MinAgentPrice}"     FontSize="16"></TextBlock>
+                    <TextBlock VerticalAlignment="Center" Margin="10 0 0 0" FontSize="16">Р.</TextBlock>
                 </StackPanel>
 
             </StackPanel>
