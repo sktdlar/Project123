@@ -5,27 +5,33 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Project123.Components.UserControls"
              mc:Ignorable="d" 
-              >
+             >
     <Grid Margin="10" Height="200" Width="400" Background="#FFEEEEEE">
-            <Image Width="200" Height="200" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="10 0 0 0" Source="/Components/Images/4154393.png"/>
-        <Grid Height="150" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10 0 10 10">
-            <TextBlock VerticalAlignment="Top"    Text="{Binding Name}"        FontSize="24"></TextBlock>
-            <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+        <!-- Отображение изображения -->
+        <Image x:Name="ProductImage" Width="200" Height="200" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" />
 
+        <!-- Блок с текстовой информацией о продукте -->
+        <Grid Height="150" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10 0 10 10">
+            <!-- Название продукта -->
+            <TextBlock VerticalAlignment="Top" Text="{Binding Name}" FontSize="24" />
+
+            <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+                <!-- Артикул -->
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="0 0 10 0" FontSize="20">Артикул</TextBlock>
-                    <TextBlock  Text="{Binding Article}" FontSize="20">121233123</TextBlock>
-
+                    <TextBlock Text="{Binding Article}" FontSize="20" />
                 </StackPanel>
+
+                <!-- Цена -->
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="0 0 10 0" FontSize="20">Стоимость</TextBlock>
-                    <TextBlock VerticalAlignment="Center"  Text="{Binding Price}"     FontSize="20">123123</TextBlock>
-                <TextBlock VerticalAlignment="Center" Margin="10 0 0 0" FontSize="20">Рублей</TextBlock>
+                    <TextBlock VerticalAlignment="Center" Text="{Binding Price}" FontSize="20" />
+                    <TextBlock VerticalAlignment="Center" Margin="10 0 0 0" FontSize="20">Рублей</TextBlock>
                 </StackPanel>
-
             </StackPanel>
-            <TextBlock VerticalAlignment="Bottom" Text="{Binding Description}" TextWrapping="NoWrap"  FontSize="16"  ></TextBlock>
-            
+
+            <!-- Описание продукта -->
+            <TextBlock VerticalAlignment="Bottom" Text="{Binding Description}" TextWrapping="NoWrap" FontSize="16" />
         </Grid>
     </Grid>
 </UserControl>

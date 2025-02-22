@@ -12,23 +12,15 @@ namespace Project123.Components.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class AgentRequests
+    public partial class AgentSalesHistory
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AgentRequests()
-        {
-            this.RequestDetails = new HashSet<RequestDetails>();
-        }
-    
-        public int RequestID { get; set; }
+        public int SaleID { get; set; }
         public int AgentID { get; set; }
-        public System.DateTime RequestDate { get; set; }
-        public int Status_Id { get; set; }
-        public Nullable<decimal> TotalAmount { get; set; }
+        public int ProductID { get; set; }
+        public int Quantity { get; set; }
+        public decimal SalePrice { get; set; }
+        public System.DateTime SaleDate { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RequestDetails> RequestDetails { get; set; }
-        public virtual AgentRequestStatus AgentRequestStatus { get; set; }
         public virtual Agents Agents { get; set; }
     }
 }

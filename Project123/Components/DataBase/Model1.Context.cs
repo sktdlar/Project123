@@ -28,7 +28,6 @@ namespace Project123.Components.DataBase
         public virtual DbSet<AgentPriorityHistory> AgentPriorityHistory { get; set; }
         public virtual DbSet<AgentRequests> AgentRequests { get; set; }
         public virtual DbSet<AgentRequestStatus> AgentRequestStatus { get; set; }
-        public virtual DbSet<Agents> Agents { get; set; }
         public virtual DbSet<AgentType> AgentType { get; set; }
         public virtual DbSet<Materials> Materials { get; set; }
         public virtual DbSet<MaterialStockHistory> MaterialStockHistory { get; set; }
@@ -42,5 +41,8 @@ namespace Project123.Components.DataBase
         public virtual DbSet<Suppliers> Suppliers { get; set; }
         public virtual DbSet<Unit> Unit { get; set; }
         public virtual DbSet<Workshop> Workshop { get; set; }
+        public virtual DbSet<Agents> Agents { get; set; }
+        public virtual DbSet<AgentSalesHistory> AgentSalesHistory { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

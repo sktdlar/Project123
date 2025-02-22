@@ -68,6 +68,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Components\Pages\MaterialSelectorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\Pages\PriceChangeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\Pages\ProductEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Components\Pages\ProductListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -95,6 +107,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Components\DataBase\Agents.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Components\DataBase\AgentSalesHistory.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Components\DataBase\AgentType.cs">
@@ -145,6 +160,9 @@
     <Compile Include="Components\DataBase\Suppliers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Components\DataBase\sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Components\DataBase\Unit.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -153,6 +171,15 @@
     </Compile>
     <Compile Include="Components\Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Pages\MaterialSelectorWindow.xaml.cs">
+      <DependentUpon>MaterialSelectorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Pages\PriceChangeWindow.xaml.cs">
+      <DependentUpon>PriceChangeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Pages\ProductEditPage.xaml.cs">
+      <DependentUpon>ProductEditPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\Pages\ProductListPage.xaml.cs">
       <DependentUpon>ProductListPage.xaml</DependentUpon>
@@ -220,6 +247,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Components\Images\ваыва.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

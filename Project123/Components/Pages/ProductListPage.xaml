@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Project123.Components.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="800" Loaded="Page_Loaded"
       Title="ProductListPage" Background="White">
 
     <Grid>
@@ -29,10 +29,11 @@
                 <ComboBoxItem>Супер мягкая</ComboBoxItem>
                 <ComboBoxItem>Детская</ComboBoxItem>
             </ComboBox>
+            <Button Name="AddProductButton" Height="30" Click="AddProductButton_Click">Добавление продукта</Button>
         </StackPanel>
         <StackPanel Grid.Row="1">
-            <WrapPanel HorizontalAlignment="Center" Name="ProductsWP">
-                
+            <WrapPanel MouseLeftButtonDown="ProductsWP_MouseLeftButtonDown" HorizontalAlignment="Center" Name="ProductsWP" >
+
             </WrapPanel>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center">
@@ -44,4 +45,4 @@
             <Button Name="ToBtn" Background="#D8FFDB" VerticalContentAlignment="Center" FontSize="16" Height="50" Width="50" Click="ToBtn_Click">→</Button>
         </StackPanel>
     </Grid>
-</Page>
+</Page>

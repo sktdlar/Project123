@@ -1,31 +1,47 @@
 ﻿using Project123.Components.DataBase;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+using System.IO;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Project123.Components.UserControls
 {
-    /// <summary>
-    /// Логика взаимодействия для ProductUC.xaml
-    /// </summary>
     public partial class ProductUC : UserControl
     {
-        public ProductUC(Products products)
+        public Products Product { get; }
+
+        public ProductUC(Products product)
         {
             InitializeComponent();
-            DataContext = products;
+            DataContext = product; // Привязываем данные
 
+            Product = product;
+
+            // Загружаем изображение продукта
+            LoadProductImage();
+        }
+
+        // Метод для загрузки изображения из базы данных
+        private void LoadProductImage()
+        {
+            if (Product.Image != null && Product.Image.Length > 0)
+            {
+                // Преобразуем байты в изображение
+                using (var ms = new MemoryStream(Product.Image))
+                {
+                    var bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.StreamSource = ms;
+                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmap.EndInit();
+                    ProductImage.Source = bitmap;
+                }
+            }
+            else
+            {
+                // Если изображения нет, используем изображение-заглушку
+                ProductImage.Source = new BitmapImage(new Uri("C:\\Users\\mazit\\Source\\Repos\\Project123\\Project123\\Components\\Images\\ваыва.png"));
+            }
         }
     }
 }

@@ -28,6 +28,7 @@ namespace Project123
             InitializeComponent();
             tabControl = MainTB;
             App.mainWindow = this;  
+            
         }
 
 
