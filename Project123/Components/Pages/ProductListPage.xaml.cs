@@ -3,17 +3,11 @@ using Project123.Components.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
+using System.Windows.Input;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Project123.Components.Pages
 {
@@ -24,78 +18,97 @@ namespace Project123.Components.Pages
     {
         int pageNumber;
         List<Products> visibleList = new List<Products>();
+        List<Products> listik;
+        private Products selectedProduct;
+
         public ProductListPage()
         {
             InitializeComponent();
             Filter.SelectedIndex = 0;
-            int pageNumber = 0;
+            pageNumber = 0;
             Refresh();
         }
 
-        int GetType()
+        private int GetType()
         {
-            if (Filter.SelectedIndex == 1)
+            switch (Filter.SelectedIndex)
             {
-                return 3;
+                case 1: return 3;
+                case 2: return 1;
+                case 3: return 5;
+                case 4: return 4;
+                case 5: return 5;
+                default: return 0;
             }
-            if (Filter.SelectedIndex == 2)
-            {
-                return 1;
-            }
-            if (Filter.SelectedIndex == 3)
-            {
-                return 5;
-            }
-            if (Filter.SelectedIndex == 4)
-            {
-                return 4;
-            }
-            if (Filter.SelectedIndex == 5)
-            {
-                return 5;
-            }
-            return 0;
         }
-        List<Products> listik;
-        void Refresh()
+
+        private void Refresh()
         {
             ProductsWP.Children.Clear();
             int pagePosition = 20 * pageNumber;
             visibleList.Clear();
             listik = App.db.Products.ToList();
+
             if (GetType() != 0)
             {
                 listik = listik.Where(x => x.ProductTypeId == GetType()).ToList();
             }
-            if(SearchTb.Text.Length >= 1)
+
+            if (SearchTb.Text.Length >= 1)
             {
                 listik = listik.Where(x => x.Name.ToLower().Contains(SearchTb.Text.ToLower())).ToList();
             }
-            for (int i = (pagePosition); i < pagePosition + 20; i++)
+
+            for (int i = pagePosition; i < pagePosition + 20; i++)
             {
-                try
+                if (i < listik.Count)
                 {
                     visibleList.Add(listik[i]);
                 }
-                catch { }
-            } 
-            foreach(var i in visibleList)
-            {
-                ProductsWP.Children.Add(new ProductUC(i));
             }
+
+            foreach (var product in visibleList)
+            {
+                var productUC = new ProductUC(product);
+                productUC.MouseLeftButtonDown += (sender, e) => OnProductSelected(product);
+                if (IsProductUnsoldLastMonth(product.Article))
+                {
+                    productUC.Background = new SolidColorBrush(Colors.LightCoral);
+                }
+                ProductsWP.Children.Add(productUC);
+            }
+
             PageNumber.Text = (pageNumber + 1).ToString();
             CountVisible.Text = $"{visibleList.Count} из {listik.Count}";
         }
 
+        private void OnProductSelected(Products product)
+        {
+            // Снимаем выделение с предыдущего продукта
+            
+            // Отмечаем текущий продукт как выбранный
+            selectedProduct = product;
+
+            // Изменяем фон выбранного продукта
+            var selectedProductUC = (ProductUC)ProductsWP.Children
+                .Cast<UIElement>()
+                .FirstOrDefault(x => ((ProductUC)x).Product == product);
+            if (selectedProductUC != null)
+                selectedProductUC.Background = Brushes.LightBlue; // Изменяем фон для выделенного
+        }
+
+        private void AddProductButton_Click(object sender, RoutedEventArgs e)
+        {
+           
+                NavigationService.Navigate(new ProductEditPage(new Products()));
+           
+        }
+
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            if(pageNumber == 0)
+            if (pageNumber > 0)
             {
-
-            }
-            else
-            {
-                pageNumber--; ;
+                pageNumber--;
                 Refresh();
             }
         }
@@ -103,21 +116,7 @@ namespace Project123.Components.Pages
         private void ToBtn_Click(object sender, RoutedEventArgs e)
         {
             int pagePosition = 20 * (pageNumber + 1);
-            List<Products> visibleList1 = new List<Products>();
-
-            for (int i = (pagePosition); i < pagePosition + 20; i++)
-            {
-                try
-                {
-                    visibleList1.Add(listik[i]);
-                }
-                catch { }
-            }
-            if (visibleList1.Count == 0)
-            {
-
-            }
-            else
+            if (pagePosition < listik.Count)
             {
                 pageNumber++;
                 Refresh();
@@ -130,6 +129,25 @@ namespace Project123.Components.Pages
         }
 
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Refresh();
+        }
+
+        private bool IsProductUnsoldLastMonth(int productId)
+        {
+            DateTime lastMonth = DateTime.Now.AddMonths(-1);
+            return !App.db.AgentSalesHistory.Any(s => s.ProductID == productId && s.SaleDate >= lastMonth);
+        }
+        private void ProductsWP_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.OriginalSource is FrameworkElement element && element.DataContext is Products selectedProduct)
+            {
+                NavigationService.Navigate(new ProductEditPage(selectedProduct));
+            }
+        }
+
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             Refresh();
         }

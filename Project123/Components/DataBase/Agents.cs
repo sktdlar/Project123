@@ -20,6 +20,7 @@ namespace Project123.Components.DataBase
             this.AgentPriorityHistory = new HashSet<AgentPriorityHistory>();
             this.AgentRequests = new HashSet<AgentRequests>();
             this.SalesPoints = new HashSet<SalesPoints>();
+            this.AgentSalesHistory = new HashSet<AgentSalesHistory>();
         }
     
         public int AgentID { get; set; }
@@ -41,5 +42,7 @@ namespace Project123.Components.DataBase
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SalesPoints> SalesPoints { get; set; }
         public virtual AgentType AgentType { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AgentSalesHistory> AgentSalesHistory { get; set; }
     }
 }
