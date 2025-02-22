@@ -29,6 +29,15 @@
                 <ComboBoxItem>Супер мягкая</ComboBoxItem>
                 <ComboBoxItem>Детская</ComboBoxItem>
             </ComboBox>
+            <TextBlock VerticalAlignment="Center" FontSize="20" Margin="40 0 0 0">Сортировка</TextBlock>
+            <ComboBox Margin="10" Width="200" VerticalContentAlignment="Center" Name="SortCb" SelectionChanged="Filter_SelectionChanged" VerticalAlignment="Center">
+                <ComboBoxItem>От А до Я</ComboBoxItem>
+                <ComboBoxItem>От Я до А</ComboBoxItem>
+                <ComboBoxItem>По возрастанию цеха</ComboBoxItem>
+                <ComboBoxItem>По убыванию цеха</ComboBoxItem>
+                <ComboBoxItem>Стоимость выше</ComboBoxItem>
+                <ComboBoxItem>Стоимость ниже</ComboBoxItem>
+            </ComboBox>
             <Button Name="AddProductButton" Height="30" Click="AddProductButton_Click">Добавление продукта</Button>
             <Button Name="CostEditBtn" Height="30" Click="CostEditBtn_Click">Изменение цены</Button>
             <Button Name="ApplyBtn" Height="30" Click="ApplyBtn_Click">Изменение цены</Button>

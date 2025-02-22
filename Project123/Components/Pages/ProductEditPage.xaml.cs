@@ -19,6 +19,7 @@ namespace Project123.Components.Pages
             InitializeComponent();
             productionMaterials = new List<ProductionMaterials>();
             MaterialCb.ItemsSource = App.db.Materials.ToList();
+            MaterialsDataGrid.ItemsSource = productionMaterials;
             MaterialCb.DisplayMemberPath = "Name";
             List<ProductionMaterials> listy = new List<ProductionMaterials>();
             foreach(var item in App.db.ProductionMaterials.ToList())
@@ -43,7 +44,10 @@ namespace Project123.Components.Pages
             else
             {
                 currentProduct = new Products();
+                DeleteButton.Visibility = Visibility.Collapsed;
             }
+            MaterialsDataGrid.ItemsSource = productionMaterials;
+
         }
 
         private void LoadMaterials()
@@ -52,6 +56,7 @@ namespace Project123.Components.Pages
                                   .Where(pm => pm.ProductArticle == currentProduct.Article)
                                   .Select(pm => pm.MaterialID)
                                   .ToList();
+            
             MaterialsDataGrid.ItemsSource = materials;
         }
 
@@ -162,21 +167,45 @@ namespace Project123.Components.Pages
 
         private void AddMaterialButton_Click(object sender, RoutedEventArgs e)
         {
-                productionMaterials.Add(new ProductionMaterials()
-                {
-                    MaterialID = (MaterialCb.SelectedItem as Materials).MaterialID,
-                    ProductArticle = currentProduct.Article,
-                    Quantity = int.Parse(Count.Text)
-                });
-                MaterialsDataGrid.ItemsSource = productionMaterials;
-            
+            //productionMaterials.Add(new ProductionMaterials()
+            //{
+            //    MaterialID = (MaterialCb.SelectedItem as Materials).MaterialID,
+            //    ProductArticle = currentProduct.Article,
+            //    Quantity = int.Parse(Count.Text)
+            //});
+            //MaterialsDataGrid.ItemsSource = productionMaterials;
 
+            if (MaterialCb.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите материал перед добавлением.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(Count.Text) || !int.TryParse(Count.Text, out int quantity) || quantity <= 0)
+            {
+                MessageBox.Show("Введите корректное количество материала.");
+                return;
+            }
+
+            productionMaterials.Add(new ProductionMaterials()
+            {
+                Materials = MaterialCb.SelectedItem as Materials,
+                Products = currentProduct,
+                MaterialID = (MaterialCb.SelectedItem as Materials).MaterialID,
+                ProductArticle = currentProduct.Article,
+                Quantity = quantity
+            });
+            MaterialsDataGrid.ItemsSource = null; 
+            MaterialsDataGrid.ItemsSource = productionMaterials;
         }
 
         private void RemoveMaterialButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("");
-
+            if(MaterialsDataGrid.SelectedItem != null){
+                App.db.ProductionMaterials.Remove(MaterialsDataGrid.SelectedItem as ProductionMaterials);
+                App.db.SaveChanges();
+                MessageBox.Show("Часть состава удалена");
+            }
         }
     }
 }

@@ -14,6 +14,7 @@
 
             <TextBlock FontSize="24" Text="Тип продукции" Margin="10"/>
             <ComboBox FontSize="24" Name="ProductTypeComboBox" Margin="10">
+                <ComboBoxItem></ComboBoxItem>
                 <ComboBoxItem>Один слой</ComboBoxItem>
                 <ComboBoxItem>Два слоя</ComboBoxItem>
                 <ComboBoxItem>Три слоя</ComboBoxItem>
@@ -29,18 +30,18 @@
             <TextBox FontSize="24" Height="200" TextWrapping="Wrap" Name="DescriptionTextBox" Margin="10" AcceptsReturn="True"/>
 
             <TextBlock Text="Материалы" FontSize="24" Margin="10"/>
-            <DataGrid Name="MaterialsDataGrid" FontSize="24" Margin="10" AutoGenerateColumns="True" Height="150">
+            <DataGrid Name="MaterialsDataGrid" AutoGenerateColumns="False" FontSize="24" Margin="10" Height="150">
                 <DataGrid.Columns>
+                    <DataGridTextColumn Header="Айди" Binding="{Binding ID}"/>
+                    <DataGridTextColumn Header="Артикул" Binding="{Binding ProductArticle}"/>
                     <DataGridTextColumn Header="Name" Binding="{Binding Materials.Name}"/>
                     <DataGridTextColumn Header="Кол-во" Binding="{Binding Materials.Unit}"/>
                     <DataGridTextColumn Header="Цена" Binding="{Binding Materials.Cost}"/>
-
-
                 </DataGrid.Columns>
             </DataGrid>
 
             <StackPanel Margin="10" Orientation="Horizontal">
-                <ComboBox VerticalContentAlignment="Center" VerticalAlignment="Center" Width="500" FontSize="24" Name="MaterialCb">
+                <ComboBox IsEditable="True" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="500" FontSize="24" Name="MaterialCb">
                     
                 </ComboBox>
                 <TextBlock Margin="10" VerticalAlignment="Center" FontSize="24">Количество</TextBlock>

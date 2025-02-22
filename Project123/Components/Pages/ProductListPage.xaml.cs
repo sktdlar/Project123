@@ -51,6 +51,34 @@ namespace Project123.Components.Pages
             visibleList.Clear();
             listik = App.db.Products.ToList();
 
+            if (SortCb.SelectedIndex == 0)
+            {
+                listik = App.db.Products.OrderBy(x => x.Name).ToList();
+            }
+            if (SortCb.SelectedIndex == 1)
+            {
+                listik = App.db.Products.OrderByDescending(x => x.Name).ToList();
+            }
+            if (SortCb.SelectedIndex == 2)
+            {
+                listik = App.db.Products.OrderBy(x => x.WorkshopNumber).ToList();
+            }
+            if (SortCb.SelectedIndex == 3)
+            {
+                listik = App.db.Products.OrderByDescending(x => x.WorkshopNumber).ToList();
+
+            }
+            if (SortCb.SelectedIndex == 4)
+            {
+                listik = App.db.Products.OrderBy(x => x.MinAgentPrice).ToList();
+
+            }
+            if (SortCb.SelectedIndex == 5)
+            {
+                listik = App.db.Products.OrderByDescending(x => x.MinAgentPrice).ToList();
+
+            }
+
             if (GetType() != 0)
             {
                 listik = listik.Where(x => x.ProductTypeId == GetType()).ToList();
