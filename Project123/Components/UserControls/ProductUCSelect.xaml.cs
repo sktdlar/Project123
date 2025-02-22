@@ -1,20 +1,33 @@
 ﻿using Project123.Components.DataBase;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace Project123.Components.UserControls
 {
-    public partial class ProductUC : UserControl
+    /// <summary>
+    /// Логика взаимодействия для ProductUCSelect.xaml
+    /// </summary>
+    public partial class ProductUCSelect : UserControl
     {
         public Products Product { get; }
 
-        public ProductUC(Products product)
+        public ProductUCSelect(Products product)
         {
             InitializeComponent();
-            DataContext = product; 
+            DataContext = product;
 
             Product = product;
 
@@ -40,19 +53,6 @@ namespace Project123.Components.UserControls
                 ProductImage.Source = new BitmapImage(new Uri("C:\\Users\\SKTDLAR\\source\\repos\\Project123\\Project123\\Components\\Images\\ваыва.png"));
             }
         }
-        public void changeColor()
-        {
-            if(MainGrid.Background == Brushes.LightBlue)
-            {
-                MainGrid.Background = Brushes.LightGreen;
-            }
-            else
-            MainGrid.Background = Brushes.LightBlue;
-        }
-        private void UserControl_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            App.productUC = this;
-            App.productListPage.navigatee(Product);
-        }
     }
 }
+    

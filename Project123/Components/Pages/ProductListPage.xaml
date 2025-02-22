@@ -30,9 +30,11 @@
                 <ComboBoxItem>Детская</ComboBoxItem>
             </ComboBox>
             <Button Name="AddProductButton" Height="30" Click="AddProductButton_Click">Добавление продукта</Button>
+            <Button Name="CostEditBtn" Height="30" Click="CostEditBtn_Click">Изменение цены</Button>
+            <Button Name="ApplyBtn" Height="30" Click="ApplyBtn_Click">Изменение цены</Button>
         </StackPanel>
         <StackPanel Grid.Row="1">
-            <WrapPanel MouseLeftButtonDown="ProductsWP_MouseLeftButtonDown" HorizontalAlignment="Center" Name="ProductsWP" >
+            <WrapPanel HorizontalAlignment="Center" Name="ProductsWP" >
 
             </WrapPanel>
         </StackPanel>

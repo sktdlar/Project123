@@ -1,4 +1,6 @@
 ﻿using Project123.Components.DataBase;
+using Project123.Components.Pages;
+using Project123.Components.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -16,6 +18,8 @@ namespace Project123
     {
         public static ProductManagementEntities db = new ProductManagementEntities();
         public static MainWindow mainWindow;
+        public static ProductListPage productListPage;
+        public static ProductUC productUC;
 
     }
 }

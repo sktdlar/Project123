@@ -88,6 +88,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Components\UserControls\ProductUCSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -160,9 +164,6 @@
     <Compile Include="Components\DataBase\Suppliers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Components\DataBase\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Components\DataBase\Unit.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -187,6 +188,9 @@
     <Compile Include="Components\PartialClass\Products.cs" />
     <Compile Include="Components\UserControls\ProductUC.xaml.cs">
       <DependentUpon>ProductUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\ProductUCSelect.xaml.cs">
+      <DependentUpon>ProductUCSelect.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -227,15 +231,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Resource Include="Components\Images\4154393.png" />
-    <Resource Include="Components\Images\Лопушок.ico" />
-    <Resource Include="Components\Images\Лопушок.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
   <ItemGroup>
     <Content Include="Components\DataBase\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -247,6 +242,16 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Components\Images\4154393.png" />
+    <Resource Include="Components\Images\Лопушок.ico" />
+    <Resource Include="Components\Images\Лопушок.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Components\Images\ваыва.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

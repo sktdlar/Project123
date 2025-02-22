@@ -26,9 +26,9 @@ namespace Project123.Components.DataBase
         public int Status_Id { get; set; }
         public Nullable<decimal> TotalAmount { get; set; }
     
+        public virtual Agents Agents { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RequestDetails> RequestDetails { get; set; }
         public virtual AgentRequestStatus AgentRequestStatus { get; set; }
-        public virtual Agents Agents { get; set; }
     }
 }

@@ -17,8 +17,10 @@ namespace Project123.Components.Pages
     public partial class ProductListPage : Page
     {
         int pageNumber;
+        bool CostEditing = false;
         List<Products> visibleList = new List<Products>();
         List<Products> listik;
+        List<Products> listy = new List<Products>();
         private Products selectedProduct;
 
         public ProductListPage()
@@ -84,17 +86,11 @@ namespace Project123.Components.Pages
 
         private void OnProductSelected(Products product)
         {
-            // Снимаем выделение с предыдущего продукта
-            
-            // Отмечаем текущий продукт как выбранный
-            selectedProduct = product;
-
-            // Изменяем фон выбранного продукта
-            var selectedProductUC = (ProductUC)ProductsWP.Children
-                .Cast<UIElement>()
-                .FirstOrDefault(x => ((ProductUC)x).Product == product);
-            if (selectedProductUC != null)
-                selectedProductUC.Background = Brushes.LightBlue; // Изменяем фон для выделенного
+            //var selectedProductUC = (ProductUC)ProductsWP.Children
+            //    .Cast<UIElement>()
+            //    .FirstOrDefault(x => ((ProductUC)x).Product == product);
+            //if (selectedProductUC != null)
+            //    selectedProductUC.Background = Brushes.LightBlue; 
         }
 
         private void AddProductButton_Click(object sender, RoutedEventArgs e)
@@ -138,18 +134,47 @@ namespace Project123.Components.Pages
             DateTime lastMonth = DateTime.Now.AddMonths(-1);
             return !App.db.AgentSalesHistory.Any(s => s.ProductID == productId && s.SaleDate >= lastMonth);
         }
-        private void ProductsWP_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        public void navigatee(Products products)
         {
-            if (e.OriginalSource is FrameworkElement element && element.DataContext is Products selectedProduct)
+            if (CostEditing)
             {
-                NavigationService.Navigate(new ProductEditPage(selectedProduct));
+                if (listy.Contains(products))
+                {
+                App.productUC.changeColor();
+                    listy.Remove(products);
+                }
+                else
+                {
+                    listy.Add(products);
+                    App.productUC.changeColor();
+                }
+            }
+            else
+            {
+                NavigationService.Navigate(new ProductEditPage(products));
+
             }
         }
-
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             Refresh();
+            App.productListPage = this;
+        }
+
+        private void CostEditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CostEditing = true;
+        }
+
+        private void ApplyBtn_Click(object sender, RoutedEventArgs e)
+        {
+            foreach(var i in listy)
+            {
+                MessageBox.Show(i.Name);
+                PriceChangeWindow priceChangeWindow = new PriceChangeWindow(listy);
+                priceChangeWindow.Show();
+            }
         }
     }
 }

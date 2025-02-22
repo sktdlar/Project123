@@ -1,51 +1,55 @@
-﻿//using System;
-//using System.Windows;
+﻿using Project123.Components.DataBase;
+using System;
+using System.Collections.Generic;
+using System.Windows;
 
-//namespace Project123.Components.Pages
-//{
-//    public partial class PriceChangeWindow : Window
-//    {
-//        private double averagePrice;
-//        private ProductListPage productListPage;
+namespace Project123.Components.Pages
+{
+    public partial class PriceChangeWindow : Window
+    {
+        private decimal averagePrice;
+        private List<Products> productList;
 
-//        public PriceChangeWindow(double averagePrice, ProductListPage productListPage)
-//        {
-//            InitializeComponent();
-//            this.averagePrice = averagePrice;
-//            NewPriceTextBox.Text = averagePrice.ToString("F2"); // Отображаем среднюю цену
-//            this.productListPage = productListPage;
-//        }
+        public PriceChangeWindow(List<Products> productList)
+        {
+            InitializeComponent();
+            this.productList = productList;
+            decimal sum = 0;
+            foreach(var i in productList)
+            {
+                sum += i.MinAgentPrice;
+            }
+            sum = sum / productList.Count;
+            averagePrice = sum;
+            NewPriceTextBox.Text = averagePrice.ToString("F2"); 
+        }
 
-//        private void ChangePriceConfirmBtn_Click(object sender, RoutedEventArgs e)
-//        {
-//            double newPrice;
-//            if (double.TryParse(NewPriceTextBox.Text, out newPrice))
-//            {
-//                // Получаем ссылку на текущую страницу (ProductListPage)
-//                var productListPage = ((MainWindow)App.Current.MainWindow).MainFrame.Content as ProductListPage;
+        private void ChangePriceConfirmBtn_Click(object sender, RoutedEventArgs e)
+        {
+            double newPrice;
+            if (double.TryParse(NewPriceTextBox.Text, out newPrice))
+            {
 
-//                if (productListPage != null)
-//                {
-//                    // Изменяем цену для выбранных товаров
-//                    foreach (var product in productListPage.selectedProducts)
-//                    {
-//                        product.MinAgentPrice = (decimal)newPrice;
-//                        // Обновляем цену в базе данных
-//                        App.db.SaveChanges();
-//                    }
+                if (productList != null)
+                {
+                    foreach (var product in productList)
+                    {
+                        product.MinAgentPrice = (decimal)newPrice;
+                        App.db.SaveChanges();
+                    }
 
-//                    this.Close();
-//                }
-//                else
-//                {
-//                    MessageBox.Show("Не удалось найти страницу с товарами.");
-//                }
-//            }
-//            else
-//            {
-//                MessageBox.Show("Введите корректную цену.");
-//            }
-//        }
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Не удалось найти страницу с товарами.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Введите корректную цену.");
+            }
+        }
 
-//    }
-//}
+    }
+}
